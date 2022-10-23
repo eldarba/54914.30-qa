@@ -32,6 +32,6 @@ public class Tar6 {
 		System.out.println("salary: " + sal);
 		System.out.println("tax: " + tax);
 		System.out.println("net salary: " + (sal - tax));
-	} 
+	}
 
 }
