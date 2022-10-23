@@ -1,4 +1,4 @@
-package homwork.c;
+package homwork.c.loops;
 
 public class Tar10 {
 

@@ -1,8 +1,8 @@
-package homwork.c;
+package homwork.c.loops;
 
 import java.util.Random;
 
-public class Tar02B {
+public class Tar02 {
 
 	public static void main(String[] args) {
 
@@ -12,13 +12,15 @@ public class Tar02B {
 		int b = random.nextInt(101);
 		System.out.println(a + ", " + b);
 
-		int inc = a < b ? 1 : -1;
-
-		while (a != b) {
-			System.out.println(a);
-			a += inc;
+		if (a > b) {
+			int temp = a;
+			a = b;
+			b = temp;
 		}
-		System.out.println(a);
+		
+		while(a <= b) {
+			System.out.println(a++);
+		}
 
 	}
 

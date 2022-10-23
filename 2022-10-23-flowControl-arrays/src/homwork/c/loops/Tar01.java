@@ -1,20 +1,19 @@
-package homwork.c;
+package homwork.c.loops;
 
 import java.util.Random;
 
-public class Tar01B {
+public class Tar01 {
 
 	public static void main(String[] args) {
-
+		
 		Random random = new Random();
 		int x = random.nextInt(101);
-
+		
 		System.out.println(x);
 		System.out.println("===========");
 
-		int c = 0;
-		while (c <= x) {
-			System.out.println(c++);
+		for (int c = 0; c <= x; c++) {
+			System.out.println(c);
 		}
 
 	}

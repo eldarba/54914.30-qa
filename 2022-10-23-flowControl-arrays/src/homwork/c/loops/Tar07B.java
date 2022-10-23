@@ -1,4 +1,4 @@
-package homwork.c;
+package homwork.c.loops;
 
 import java.util.Random;
 
