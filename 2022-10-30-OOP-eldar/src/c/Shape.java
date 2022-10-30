@@ -1,6 +1,6 @@
 package c;
 
-public class Shape {
+public abstract class Shape {
 
 	private String color;
 
@@ -12,9 +12,7 @@ public class Shape {
 		this.color = color;
 	}
 	
-	public double getArea() {
-		return -1;
-	}
+	public abstract double getArea();
 
 }
  
