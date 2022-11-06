@@ -4,9 +4,32 @@ import java.util.Scanner;
 
 public class ClaculatorUI {
 	
+	public static void main(String[] args) {
+		ClaculatorUI ui = new ClaculatorUI();
+		ui.start();
+	}
+	
 	private Scanner scanner = new Scanner(System.in);
+	private Calculator calculator = new Calculator();
 	private String userInput;
 	
+	public void start() {
+		while(true) {
+			showMenu();
+			getUserInput();
+			doUserRequest();
+		}
+	}
+
+	public void doUserRequest() {
+		switch(userInput) {
+		case "x":
+			System.out.println("Bye");
+			break;
+		case "clr":
+			calculator.reset();
+		}
+	}
 	
 	public void showMenu() {
 		System.out.println();
@@ -21,7 +44,9 @@ public class ClaculatorUI {
 	}
 	
 	public void getUserInput() {
-		
+		System.out.println("enter your choice:");
+		userInput = scanner.nextLine();
 	}
+	
 
 }
