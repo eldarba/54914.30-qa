@@ -2,34 +2,46 @@ package app.core;
 
 import java.util.Scanner;
 
-public class ClaculatorUI {
+public class CalculatorUI {
 	
 	public static void main(String[] args) {
-		ClaculatorUI ui = new ClaculatorUI();
+		CalculatorUI ui = new CalculatorUI();
 		ui.start();
 	}
 	
 	private Scanner scanner = new Scanner(System.in);
 	private Calculator calculator = new Calculator();
 	private String userInput;
+	private boolean quit; // default of boolean is false
+	
+	public void doUserRequest() {
+		switch(userInput) {
+		case "x":
+			quit = true;
+			System.out.println("Bye");
+			break;
+		case "clr":
+			calculator.reset();
+			break;
+		case "=":
+			System.out.println("result is: " + calculator.getResult());
+			break;
+		case "+":
+			System.out.println("enter number to add: ");
+			int valToAdd = scanner.nextInt();
+			calculator.add(valToAdd);
+			break;
+		}
+	}
 	
 	public void start() {
-		while(true) {
+		while(!quit) {
 			showMenu();
 			getUserInput();
 			doUserRequest();
 		}
 	}
 
-	public void doUserRequest() {
-		switch(userInput) {
-		case "x":
-			System.out.println("Bye");
-			break;
-		case "clr":
-			calculator.reset();
-		}
-	}
 	
 	public void showMenu() {
 		System.out.println();
