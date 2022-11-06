@@ -15,6 +15,7 @@ public class CalculatorUI {
 	private boolean quit; // default of boolean is false
 	
 	public void doUserRequest() {
+		int val = 0;
 		switch(userInput) {
 		case "x":
 			quit = true;
@@ -27,9 +28,28 @@ public class CalculatorUI {
 			System.out.println("result is: " + calculator.getResult());
 			break;
 		case "+":
-			System.out.println("enter number to add: ");
-			int valToAdd = scanner.nextInt();
-			calculator.add(valToAdd);
+			System.out.println("enter number: ");
+			val = scanner.nextInt();
+			scanner.nextLine(); // take the new line out of the scanner
+			calculator.add(val);
+			break;
+		case "-":
+			System.out.println("enter number: ");
+			val = scanner.nextInt();
+			scanner.nextLine(); // take the new line out of the scanner
+			calculator.sub(val);
+			break;
+		case "*":
+			System.out.println("enter number: ");
+			val = scanner.nextInt();
+			scanner.nextLine(); // take the new line out of the scanner
+			calculator.mul(val);
+			break;
+		case ":":
+			System.out.println("enter number: ");
+			val = scanner.nextInt();
+			scanner.nextLine(); // take the new line out of the scanner
+			calculator.div(val);
 			break;
 		}
 	}
