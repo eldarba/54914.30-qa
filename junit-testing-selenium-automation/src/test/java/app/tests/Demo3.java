@@ -1,7 +1,5 @@
 package app.tests;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -29,20 +27,17 @@ class Demo3 {
 	}
 
 	@Test
-	void testAdd() {
-		System.out.println("== test add");
-		calculator.add(5); // 5
-		calculator.add(3); // 8
-		calculator.add(10); // 18
-		assertEquals(18, calculator.getResult());
-	}
+	void testAll() {
 
-	@Test
-	void testSub() {
-		System.out.println("== test subtract");
-		calculator.sub(3); // -3
-		calculator.sub(2.5); // -5.5
-		assertEquals(-5.5, calculator.getResult());
+		TestAdd testAdd = new TestAdd();
+		testAdd.test(calculator);
+
+		TestSub testSub = new TestSub();
+		testSub.test(calculator);
+
+		// homework
+		// add test multiply - a unit test class
+		// add test divide - a unit test class
 	}
 
 	@AfterEach
